@@ -1,5 +1,5 @@
 package HW2;
-
+import java.util.Scanner;
 
 public class MathGames {
     // 1. Create a method that will calculate the Pythagorean Theorem (https://en.wikipedia.org/wiki/Pythagorean_theorem)
@@ -11,10 +11,23 @@ public class MathGames {
     // Bonus points: Try to make it accept any 2 sides and return the 3rd. So it can take in
     // Hypotenuse and Perpendicular and return the base.
 
+  // c is the hypotenuse, a and b are the other sides
+    public void pythag(double adjacent, double opposite){
+      double hypo = Math.sqrt((adjacent*adjacent)+(opposite*opposite));
+      System.out.println(hypo);
+     a_squared = a ** 2
+	   b_squared = b ** 2
+	   sum_a_squared_b_squared = a ** 2 + b ** 2
+
+	c_squared = sum_a_squared_b_squared
+	c = math.sqrt(c_squared)
+	side_c = round(c,digits_after_decimal)
+    }
 
 
-    
-    // 2. Create a method that will calcuate my grade in the class. You can use the grade range as follows
+
+  
+    // 2. Create a method that will calculate my grade in the class. You can use the grade range as follows
         // A: 100 - 90
         // B:  89 - 80
         // C:  79 - 70
@@ -26,7 +39,25 @@ public class MathGames {
         // Hint 2: You will probably need to cast the double to an int
         // Hint 3: You will probably need to use the Math.ceil() method 
 
-
+      public void grade(){
+        // scope type NAME(PARAMETERS){}
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter percentage marks");
+        double percentage = scan.nextDouble();
+        // You need to run a Math.ceil() on the percentage
+        if(percentage >= 89){
+          System.out.println("Excellent: Grade A");
+        }else if(percentage < 89 && percentage >= 79){
+          System.out.println("Very Good: Grade B");
+        }else if(percentage < 79 && percentage >= 69){
+          System.out.println("Good: Grade C");
+        }else if(percentage < 69 && percentage >= 59){
+          System.out.println("Satisfactory: Grade D");
+        }else if(percentage < 59 && percentage >= 0){
+          System.out.println("Failed: Grade F");
+        }
+      }
+        
 
 
 
@@ -37,17 +68,55 @@ public class MathGames {
     //      Hint 2: Using doubles will be helpful for when you need to calculate decimals
     //      Hint 3: It is possible you might need to Cast a double to an int or vice versa
     //      Hint 4: You will probably need to use the Math.ceil() method 
+    //      total / people * percent
 
-    
- 
+    // scope type NAME(PARAMETERS){}
+   
+public void tipcalc() {
 
-
-    // you do not need this main if you want to make a tester class
-     public static void main(String[] args){
+        Scanner sc = new Scanner(System.in); 
+        double bill;
+        double tipPercentage; 
+        double tip; 
+        double billTip;
+        int people;
         
-    }
+       System.out.println("What is the amount of the bill?"); 
+       bill = sc.nextDouble();
+       
+       System.out.println("What percentage would you like to tip?");
+       tipPercentage = sc.nextDouble(); 
+       
+       tip = bill * (tipPercentage/100);
+       billTip = bill * (tipPercentage/100) + bill;
+       System.out.println("Ceiling value of " + billTip + " = " + Math.ceil(billTip));
+       System.out.println("Your tip amount is $" + tip); 
+       System.out.println("Your bill + tip is $" + billTip);
+       
+       System.out.println("How many people would you like to split the bill with?");
+       people = sc.nextInt();
+       
+       System.out.println("Each person needs to pay $" + billTip/people); 
+       
+       System.out.println("Thank you, come again!");
+  }
+  // you do not need this main if you want to make a tester class
+    public static void main(String[] args){
+      // how do we call the pythag method knowing we have a MathGames Object
 
+      // CLASSNAME NAME = new CLASSNAME()
+      MathGames games = new MathGames();
+      games.pythag(5,6);
+      games.grade();
+      games.tipcalc();     
+        
+    
 
-
+      }
 
 }
+    
+        
+
+
+

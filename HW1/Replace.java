@@ -1,7 +1,7 @@
 package HW1;
 // Make a method that accepts a string and an integer and a char and will return the string with the char
 // replaced at the integer given
-// charReplace("I MAKE BREAD",2,T)
+// charReplace("I MAKE BREAD",2,'T')
 // EX: I MAKE BREAD, 2, T
 //     I TAKE BREAD
 // remember computer counting starts at 0:
@@ -9,8 +9,9 @@ package HW1;
 // 01234
 public class Replace {
     public String charReplace(String s, int x, char z) {
-        return null;
-        
+        //System.out.println(s);              s.substring(3)
+        String answer = s.substring(0,x)+ z + s.substring(x+1);
+        return answer;
     }
     
 }

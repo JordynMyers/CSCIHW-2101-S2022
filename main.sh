@@ -1,5 +1,5 @@
 clear
-cd /home/runner/CSCI-2101-S2022
+cd /home/runner/CSCIHW-2101-S2022
 printf "Compiling..."
 # This line needs to be changed to whatever folder 
 # you are running code out of
