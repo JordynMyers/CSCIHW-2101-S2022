@@ -15,17 +15,8 @@ public class MathGames {
     public void pythag(double adjacent, double opposite){
       double hypo = Math.sqrt((adjacent*adjacent)+(opposite*opposite));
       System.out.println(hypo);
-     a_squared = a ** 2
-	   b_squared = b ** 2
-	   sum_a_squared_b_squared = a ** 2 + b ** 2
-
-	c_squared = sum_a_squared_b_squared
-	c = math.sqrt(c_squared)
-	side_c = round(c,digits_after_decimal)
+     
     }
-
-
-
   
     // 2. Create a method that will calculate my grade in the class. You can use the grade range as follows
         // A: 100 - 90
