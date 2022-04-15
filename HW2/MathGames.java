@@ -9,8 +9,9 @@ public class MathGames {
     //      Remember the Triangle has a base, Perpendicular, and Hypotenuse
     // Hint 2: Math.pow and Math.sqrt are your friend here
     // Bonus points: Try to make it accept any 2 sides and return the 3rd. So it can take in
-    // Hypotenuse and Perpendicular and return the base.
 
+  // Problem #1
+  // Hypotenuse and Perpendicular and return the base.
   // c is the hypotenuse, a and b are the other sides
     public void pythag(double adjacent, double opposite){
       double hypo = Math.sqrt((adjacent*adjacent)+(opposite*opposite));
@@ -30,6 +31,7 @@ public class MathGames {
         // Hint 2: You will probably need to cast the double to an int
         // Hint 3: You will probably need to use the Math.ceil() method 
 
+      // Problem #2
       public void grade(){
         // scope type NAME(PARAMETERS){}
         Scanner scan = new Scanner(System.in);
@@ -62,7 +64,8 @@ public class MathGames {
     //      total / people * percent
 
     // scope type NAME(PARAMETERS){}
-   
+
+  // Problem #3
 public void tipcalc() {
 
         Scanner sc = new Scanner(System.in); 

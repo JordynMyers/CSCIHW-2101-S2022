@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Loops {
 
     //NOTE: DO NOT change anything in the boiler plate
-    //If I added default code it is meant to be there
+    //1. If I added default code it is meant to be there
     //and should not be adjusted unless otherwise noted
     //(return statments are usually changed)
 
@@ -14,33 +14,87 @@ public class Loops {
     //loopE("eat") -> true
     //eeat -> true
     //eeeat -> true
-    //eeeeat -> false
-
+    //eeeeat -> false 
     public static boolean loopE(String str){
-        return true; // <- this should be changed 
-    }
+    char[] letters = str.toCharArray();
+    int count = 0;
+		for (int i = 0; i < letters.length; i++) {
+		if (letters[i] == 'e') {
+				count++;
+  //   System.out.println(Loops.loopE("eat"));
+		// System.out.println(Loops.loopE("eeat"));
+  //   System.out.println(Loops.loopE("eeeat"));
+		// System.out.println(Loops.loopE("eeeeat"));
+			}
+		}
+		if (count == 1 || count== 2 || count == 3) {
+		return true;
+		}
+		return false; 
+      
+	}
 
-    //Given a String str and int n return a larger string
+
+    //2. Given a String str and int n return a larger string
     //that is n copies of the original string 
     //Ex.
     //stringTimes("Code",2) ->"CodeCode"
     //stringTimes("Code",4) ->"CodeCodeCodeCode"
+    // public static String stringTimes(String str, int n) 
+    //     return null; // <- this should be changed 
+     
     public static String stringTimes(String str, int n) {
-        return null; // <- this should be changed 
+        String s = "";
+        for ( int i = 0; i < n; i++ )
+        {
+            s = s + str;
+        }
+        return s; 
     } 
 
-    //Create a method Given a string, return the string where all of the "z"
+    //3. Create a method Given a string, return the string where all of the "z"
     //Have been removed. Except do not remove a z at the start
     //or end
     //Ex.
     //stringT("zHelloz") -> "zHelloz"
     //stringT("nozthaznks") -> "nothanks"
     //stringT("xksiazdjaasldzsajzasdz") -> "xksiadjaasldsajasdz"
-    public static String stringZ(String str){
-        return null; // <- this should be changed 
-    }
 
-    //Create a method that contains a while loop that allows for
+  public static String stringZ(String str){
+      for (int i = 0 ;i < str.length(); i++){
+        if (str.substring(0,1).equals("z") &&  str.substring(str.length()-1).equals("z")){
+          return str = "z"+ str.replace("z", "")+"z";
+        }
+        else if (str.substring(0,1).equals("z")){   
+          return str ="z"+ str.replace("z", "");
+        }
+        else if(str.substring(str.length()-1).equals("z")){   
+          return str =str.replace("z", "") +"z";
+        }
+        else{
+        return str= str.replace("z", "");
+        }
+      }
+      return str;      
+     }
+
+  
+    ////////// take the string and check if there is a z in the beginning or the end 
+
+    // String s = "";
+    // for (int i = 1; i < str.length() - 1; i++) {
+    // if (str.charAt(i) != 'z') s += str.charAt(i);
+    // }
+
+  
+    // += is helpful here as well
+    
+  
+    // public static String stringZ(String str){
+    
+    // }
+
+    //4. Create a method that contains a while loop that allows for
     //The user to input numbers until the number 0 is entered. Each time a number is 
     //entered the total will be summed and then prompted for a second number. 
     //NOTE: I require the use of scanner here to get each integer from the user
@@ -65,12 +119,54 @@ public class Loops {
     // The total so far is 27.
     // Number: 0
     // TOTAL ENDED --- The total is 27.
-    public static void sums(){
+    public static void sum(){
+    int num = 1;
+    int sum = 0;
+    Scanner keyboard = new Scanner(System.in);
+    while(num > 0){ 
+      System.out.println("Enter a number:");
+      num = keyboard.nextInt();
+      sum += num;
+      if(num != 0){
+        System.out.println("total = " + sum);
+        }else{
+        System.out.println("TOTAL ENDED ---- THE TOTAL IS " + sum);
+        
+        }
+        
+      }
+      
+  
     }
 
-    public static void main(String[] args) {
-        // Add code to help test your methods here
 
-    }
-    
+
+
+
+
+      
+
+
+public static void main(String[] args) {
+Scanner keyboard = new Scanner(System.in);
+System.out.println("input a word for number one.");
+System.out.println(loopE(keyboard.next()));
+System.out.println("input a word for number two as well as how many times to repeat.");
+System.out.println(stringTimes(keyboard.next(), keyboard.nextInt()));
+System.out.println("input a word with z's in it to see when removed.");
+System.out.println(stringZ(keyboard.next()));
+System.out.println("Add up numbers you give, enter as many as you would like, to then get the sum");
+sum();
+  
+  
 }
+      
+      
+      
+
+
+      
+}
+    
+
+
